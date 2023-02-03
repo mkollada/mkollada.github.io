@@ -1,0 +1,13 @@
+---
+layout: default
+title: Newsletters
+---
+<h1>The Collective Record Newsletters</h1>
+
+<ul>
+  {% for newsletter in site.newsletters %}
+    <li>
+      <h2><a href="{{ newsletter.url }}">{{ newsletter.title }}</a></h2>
+    </li>
+  {% endfor %}
+</ul>

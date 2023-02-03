@@ -1,0 +1,26 @@
+collections:
+  authors:
+    output: true
+  newsletters:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "newsletters"
+    values:
+      layout: "newsletter"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
