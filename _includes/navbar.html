@@ -1,0 +1,15 @@
+<div id="navbar">
+    <nav>
+      <div>
+        <hr class="banner_line">
+        <table class="navbar-links">
+          {% for item in site.data.navigation %}
+              <td style="padding: 20;">
+                <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+              </td>
+          {% endfor %}
+        </table>
+        <hr class="banner_line">
+      </div>
+    </nav>
+</div>

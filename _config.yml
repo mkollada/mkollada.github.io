@@ -1,20 +1,20 @@
+title: The Collective Record
+author: Matt Kollada
+baseurl: ""
+markdown: kramdown
+
+
+
 collections:
-  authors:
-    output: true
   newsletters:
     output: true
+  reviews:
+    output: true
+  texts:
+    output: true 
+
 
 defaults:
-  - scope:
-      path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
   - scope:
       path: ""
       type: "newsletters"

@@ -2,12 +2,12 @@
 layout: default
 title: Newsletters
 ---
-<h1>The Collective Record Newsletters</h1>
+<h4>The Collective Record Newsletters</h4>
 
 <ul>
-  {% for newsletter in site.newsletters %}
+  {% for newsletter in site.newsletters reversed %}
     <li>
-      <h2><a href="{{ newsletter.url }}">{{ newsletter.title }}</a></h2>
+      <h5><a href="{{ newsletter.url }}">{{ newsletter.title }}</a></h5>
     </li>
   {% endfor %}
 </ul>

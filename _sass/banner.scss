@@ -1,0 +1,46 @@
+#banner_text {
+    align-self: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    // max-lines: 2;
+}
+
+.banner_text_div {
+    flex: 2;
+}
+
+.banner_icon_div {
+    flex: 1;
+}
+
+.banner_line {
+    height: 2px;
+    border-width: 0;
+    background-color: black;
+}
+
+.banner_container {
+    display: flex;
+    gap: 10;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    // min-width: 400px;
+    text-align: center;
+}
+
+.banner_icon {
+    width: auto;
+    height: auto;
+    min-width: 50px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 480px){
+    #banner_text {
+        font-size: 20px;
+    }
+}

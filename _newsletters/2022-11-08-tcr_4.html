@@ -1,10 +1,10 @@
 ---
-title: "TCR #5"
+author: matt
+title: "TCR #4"
 ---
-
 <!-- Text Block 1 -->
 {% for text in site.texts %}
-	{% if text.unique_name == "tcr_5_intro" %}
+	{% if text.unique_name == "tcr_4_intro" %}
 		{% include text_block.html text=text %}
 	{% endif %}
 {% endfor %}
@@ -12,15 +12,14 @@ title: "TCR #5"
 {% include divider_line.html %}
 
 <!-- Section Header 1 -->
-{% assign header_1_text = "Pete talks Petey" %}
-{% include section_header.html header_text=header_1_text %}
+{% include section_header.html header_text="An Album" %}
 
 {% include divider_line.html %}
 
 
 <!-- Review Block 1 -->
 {% for review in site.reviews %}
-	{% if review.unique_name == "PV-Lean_Into_Life-Petey" %}
+	{% if review.unique_name == "MK-I_Walked_With_You_A_Ways-Plains" %}
 		{% include review_block.html review=review %}
 	{% endif %}
 {% endfor %}
@@ -28,23 +27,13 @@ title: "TCR #5"
 {% include divider_line.html %}
 
 <!-- Section Header 2 -->
-{% assign header_2_text = "2 Albums that have been sticking with me" %}
-{% include section_header.html header_text=header_2_text %}
+{% include section_header.html header_text="An Artist" %}
 
 {% include divider_line.html %}
 
 <!-- Review Block 2 -->
 {% for review in site.reviews %}
-	{% if review.unique_name == "MK-Absolutely-Dijon" %}
-		{% include review_block.html review=review %}
-	{% endif %}
-{% endfor %}
-
-{% include divider_line.html %}
-
-<!-- Review Block 3 -->
-{% for review in site.reviews %}
-	{% if review.unique_name == "MK-5_to_the_eye_with_stars-RAP_Ferreira" %}
+	{% if review.unique_name == "MK-Mavi" %}
 		{% include review_block.html review=review %}
 	{% endif %}
 {% endfor %}
@@ -52,15 +41,30 @@ title: "TCR #5"
 {% include divider_line.html %}
 
 <!-- Section Header 3 -->
-{% assign header_3_text = "My 2022 Year End Playlists" %}
-{% include section_header.html header_text=header_3_text %}
+{% include section_header.html header_text="A Single" %}
 
 {% include divider_line.html %}
 
-<!-- Text Block 2 -->
-
-{% for text in site.texts %}
-	{% if text.unique_name == "tcr_5_extra" %}
-		{% include text_block.html text=text %}
+<!-- Review Block 3 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-Angel-SAULT" %}
+		{% include review_block.html review=review %}
 	{% endif %}
-{% endfor %} 
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 4 -->
+{% include section_header.html header_text="A recommendation from Zack" %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 4 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "ZM-When_Everything_is_Better-Pip_Millet" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+
+

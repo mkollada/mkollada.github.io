@@ -1,0 +1,44 @@
+.email_input{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#email_form {
+    display: flex;
+    column-gap: 10;
+    gap: 10;
+    // align-items: center;
+}
+
+.email_div {
+    padding: 10px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+// .email_form {
+//     align-items: center;
+//     input {
+//         width: 50%;
+//     }
+// }

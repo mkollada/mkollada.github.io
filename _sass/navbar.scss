@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    align-items: center;
+	margin: 0 auto;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 5px;
+	
+}
+
+.navbar-home {
+    a {
+	font-size: 4.5;
+	text-decoration: none;
+    }
+}
+
+.navbar-links {
+	font-size: 2rem;
+
+	margin: 0 auto;
+	text-decoration: none;
+	// width: 100%;
+	align-self: center;
+
+}
+

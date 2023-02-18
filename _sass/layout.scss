@@ -1,0 +1,34 @@
+#container {
+    max-width: 850px;
+    margin: 25px auto 0px auto;
+    align-self: center;
+    background-color: rgb(255, 227, 149);
+}
+
+#border-container-2 {
+    max-width: 850px;
+    min-width: 400px;
+    // margin: 0px auto;
+    align-self: center;
+    background-color: rgb(230, 230, 230);
+    margin: 25px auto 0px auto;
+    padding: 25px;
+}
+
+#border-container {
+    // margin: 25px auto 0px auto;
+    align-self: center;
+    background-color: white;
+    padding: 12px;
+}
+
+#content-container {
+    // padding: 2rem 2rem 2rem 2rem;
+    background-color: white;
+}
+
+@media only screen and (max-width: 480px){
+    #border_container {
+        min-width: 400px;
+    }
+}

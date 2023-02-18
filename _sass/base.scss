@@ -1,0 +1,29 @@
+ .current {
+    color: green;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+}
+
+img {
+    // Dynamically resize images
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem;
+}
+
+table td {
+  font-size: 16px;
+  padding: 0.3em 0.8em;
+//   table-layout: fixed;
+}
+
+//////////////////////////////////////////////////
+// Mobile Settings
+@media only screen and (max-width: 480px) {
+    a {
+	text-decoration: none;
+    }
+}

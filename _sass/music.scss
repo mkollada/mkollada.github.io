@@ -1,0 +1,90 @@
+// .album_icon {
+//     width: 33%;
+// }
+
+.music_table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.image_container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+  
+.album_icon {
+    opacity: 1;
+    display: block;
+    // width: 100%;
+    // height: auto;
+    // transition: .5s ease;
+    backface-visibility: hidden;
+}
+  
+.album_hover {
+    // transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+  
+.image_container:hover .album_icon {
+    opacity: 0.3;
+}
+  
+.image_container:hover .album_hover {
+    opacity: 1;
+}
+  
+.hover_text {
+    color: black;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+
+
+// div.image_container {
+//     width: 200px;
+//     height: 180px;
+//     display: inline-block;
+//     overflow: hidden;
+//     // position: relative;
+// }
+// div.image_container img {
+//     width: 100%;
+//     display: block;
+// }
+
+// div.image_container:hover img {
+//     opacity: 0.3;
+// }
+
+// .hover_text {
+//   transition: .5s ease;
+//   opacity: 0;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   -ms-transform: translate(-50%, -50%);
+//   text-align: center;
+// }
+
+// .album_hover:hover .hover_text {
+//     opacity: 1;
+// }
+
+
+
+
+// .playlist_container {
+//     column-span: "2";
+// }
