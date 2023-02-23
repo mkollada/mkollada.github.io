@@ -5,8 +5,14 @@
                 <table cellpadding="10" style="margin-left: 10px;margin-top: 10px;margin-right: 10px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 	<tbody><tr>
 		<td align="center" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-    		<a href="{{ review.album_link }}" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-        			<img src="{{ review.album_image_path }}" alt="{{ review.alt_image_text }}" width="125" height="125" style="border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;">
+			{% if review.album_link %}
+    			<a href="{{ review.album_link }}" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+			{% elsif review.track_link %}
+				<a href="{{ review.track_link }}" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+			{% else %}
+				<a href="{{ review.artist_link }}" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+			{% endif %}
+					<img src="{{ review.album_image_path }}" alt="{{ review.alt_image_text }}" width="125" height="125" style="border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;">
     			</a><table style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">	
     			<tbody><tr>
                 
@@ -23,9 +29,28 @@
 						{% if review.track_name %}
 							<a href="{{ review.track_link }}" style="text-decoration: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><h4 style="font-family: Helvetica;min-width: 175px;display: block;margin: 0;padding: 0;color: #202020;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">{{ review.track_name }}</h4></a>
 						{% endif %}
-						<a href="{{ review.artist_link }}" style="text-decoration: none;color: black;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+						<!-- <a href="{{ review.artist_link }}" style="text-decoration: none;color: black;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"> -->
 							{% if review.album_name or review.track_name %}
-								<div style="font-family: Helvetica; margin-top: 10px;">{{ review.artist_name }}</div>
+								{% if review.artist_names %}
+									{% for artist_name in {{ review.artists_names }} %}
+									poop
+									<div style="font-family: Helvetica; margin-top: 10px;">
+										<!-- {{ review.artist_names }} -->
+										
+											
+											<!-- {% if forloop.index > 0 %}
+											", " 
+											{% endif %} -->
+											<a href="{{ review.artist_links[forloop.index] }}">review.artist_name</a>
+										
+									</div>
+									{% endfor %}
+									
+								{% elsif review.artist_name %}
+									<div style="font-family: Helvetica; margin-top: 10px;">
+										{{ review.artist_name }}
+									</div>
+								{% endif %}
 							{% else %}
 								<h4 style="font-family: Helvetica;min-width: 175px;display: block;margin: 0;padding: 0;color: #202020;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">{{ review.artist_name }}</h4>
 							{% endif %}

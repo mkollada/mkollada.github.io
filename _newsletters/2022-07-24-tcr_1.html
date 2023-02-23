@@ -1,0 +1,76 @@
+---
+title: "TCR #1"
+---
+<!-- Text Block 1 -->
+{% for text in site.texts %}
+	{% if text.unique_name == "tcr_1_intro" %}
+		{% include text_block.html text=text %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 1 -->
+{% include section_header.html header_text="4 Awesome Albums From This Year" %}
+
+{% include divider_line.html %}
+
+
+<!-- Review Block 1 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-Remember_Your_North_Star-Yaya_Bey" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 2 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-Good_and_Green_Again-Jake_Xerxes_Fussell" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 3 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-MORE_BLACK_SUPERHEROES-WESTSIDE_BOOGIE" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 4 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-dnwmibiy-Big_Thief" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 2 -->
+{% include section_header.html header_text="Zack Miller Picks an Album for You" %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 5 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "ZM-Few_Good_Things-Saba" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+
+<!-- Extra -->
+
+{% for text in site.texts %}
+	{% if text.unique_name == "tcr_2_extra" %}
+		{% include text_block.html text=text %}
+	{% endif %}
+{% endfor %} 

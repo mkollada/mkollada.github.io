@@ -2,6 +2,7 @@
 title: TCR 4 Intro
 unique_name: tcr_4_intro
 ---
+<br>
 What's up good people??<br>
 <br>
 Of late, I've felt particularly aware of how music can help create space for things I want more of in my life.&nbsp;Putting on an Adrianne Lenker record when my mind is scattered is a ritual I can count on to wind down, to bring me a little peace. Playing guitar and jamming with others is something that inevitably makes me more grounded, more present than I came to it. This weekend, I went to a jazz club that was crackling with energy, the band was ripping, and midway through their second set I had a moment where I stopped and noticed a room full of strangers visibly animated in their excitement about the same thing. I left recharged and inspired by an environment that had been built around some special music (the club's called <a href="https://www.ornithologyjazzclub.com/" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">Ornithology</a>, if you're in nyc definitely check it out). Good music has been providing me a lot. I'm feeling grateful for it, and for those who've helped me find it all.<br>
@@ -22,3 +23,4 @@ All of that gets me excited to share what I've been listening to lately with you
 Matt<br>
 <br>
 P.S.&nbsp;I changed the way I'm sending the emails in hopes of triggering less spam filters (lol). If you didn't get the first three of these, and are interested let me know!
+<br>

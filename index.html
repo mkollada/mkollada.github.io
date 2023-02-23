@@ -12,13 +12,128 @@ title: Home
 
     Want to put your music on the next collective record playlist? Sign up here
 </p>
-<div class="email_input">
-    <form id="email_form">
+{% include divider_line.html %}
+
+
+<!-- <div class="email_input">
+    <form id="email_form" action="https://formspree.io/f/meqwgknr" method="POST">
         <div class="email_div">
             <input type="text" placeholder="Input your email here...">
         </div>
         <div class="email_div">
-            <input type="submit" value="Subscribe">
+            <input name="email_address" type="submit" value="Subscribe">
         </div>
     </form> 
+</div> -->
+
+<form id="my-form" class="email_input" action="https://formspree.io/f/meqwgknr" method="POST">
+    <div class="email_div">
+        <input name="email_address" type="text" placeholder="Input your email here...">
+    </div>
+    <div class="email_div">
+        <input type="submit" value="Subscribe">
+    </div>
+    <p id="my-form-status"></p>
+    <!-- <label>Email:</label> -->
+    <!-- <input type="email" name="email" />
+    <label>Message:</label>
+    <input type="text" name="message" />
+    <button id="my-form-button">Submit</button>
+    <p id="my-form-status"></p> -->
+  </form>
+  <!-- Place this script at the end of the body tag -->
+  <script>
+      var form = document.getElementById("my-form");
+      
+      async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+              'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            status.innerHTML = "Thanks for your submission!";
+            form.reset()
+          } else {
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+              } else {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+              }
+            })
+          }
+        }).catch(error => {
+          status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+      }
+      form.addEventListener("submit", handleSubmit)
+  </script>
+
+{% include divider_line.html %}
+
+
+
+
+{% assign random = site.time | date: "%s%N" | modulo: site.reviews.size %}
+
+<!-- Section Header 1 -->
+{% include section_header.html header_text="A random pick from our vaults:" %}
+
+{% include divider_line.html %}
+
+
+
+<input type="button" value="Randomize" onclick=randomReview("{{ curr_review }}");>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+<script>
+
+function randomReview() {
+  var allReviews = [
+      {% for review in site.reviews %}
+          {% if prev_review != review.unique_name %}
+              "/assets/html{{ review.url }}",
+          {% endif %}
+      {% endfor %}
+  ];
+
+  
+
+  reviewIndex = parseInt(Math.random() * allReviews.length)
+
+  // document.getElementById('random-review').innerHTML = 
+  
+  console.log('functioning')
+
+  $(function(){
+      $("#random-review").load(allReviews[reviewIndex]); 
+    });
+
+  return allReviews[ reviewIndex ]
+
+
+  
+}
+</script>
+
+<!-- {% assign curr_review='MK-Florist-Florist' %} -->
+
+
+<div id="random-review">
+
+  <!-- {% for review in site.reviews %}
+    {% if review.unique_name == curr_review %} -->
+      {% include review_block.html review=review %}
+    <!-- {% endif %}
+  {% endfor %} -->
+
 </div>
+
+
+{% include divider_line.html %}

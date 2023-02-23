@@ -1,0 +1,59 @@
+---
+title: "TCR #3"
+---
+<!-- Text Block 1 -->
+{% for text in site.texts %}
+	{% if text.unique_name == "tcr_3_intro" %}
+		{% include text_block.html text=text %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 1 -->
+{% include section_header.html header_text="Nicole goes to a festival and comes home with new music for us" %}
+
+{% include divider_line.html %}
+
+
+<!-- Review Block 1 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "NA-Trousdale" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 1 -->
+{% include section_header.html header_text="3 Artists I was stuck on in September" %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 2 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-jaimie_branch" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 3 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-Nilüfer_Yanya" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+
+<!-- Review Block 4 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-alex_g" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}

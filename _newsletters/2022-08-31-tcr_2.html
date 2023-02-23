@@ -1,0 +1,78 @@
+---
+author: matt
+title: "TCR #2"
+---
+<!-- Text Block 1 -->
+{% for text in site.texts %}
+	{% if text.unique_name == "tcr_2_intro" %}
+		{% include text_block.html text=text %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 1 -->
+<!-- {% include section_header.html header_text="An Album" %}
+
+{% include divider_line.html %} -->
+
+
+<!-- Review Block 1 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-Florist-Florist" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 2 -->
+<!-- {% include section_header.html header_text="An Artist" %}
+
+{% include divider_line.html %} -->
+
+<!-- Review Block 2 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-The_Forever_Story-JID" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 3 -->
+<!-- {% include section_header.html header_text="A Single" %}
+
+{% include divider_line.html %} -->
+
+<!-- Review Block 3 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-WSDBLTTS-Porridge_Radio" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 4 -->
+{% include section_header.html header_text="Ryan just got married and still had time to pick an album for us" %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 4 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "RT-Cheat_Codes-Black_Thought" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+
+<!-- Extra -->
+
+{% for text in site.texts %}
+	{% if text.unique_name == "tcr_2_extra" %}
+		{% include text_block.html text=text %}
+	{% endif %}
+{% endfor %} 
