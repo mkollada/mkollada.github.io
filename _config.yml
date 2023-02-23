@@ -10,6 +10,7 @@ collections:
     output: true
   reviews:
     output: true
+    json: true
   texts:
     output: true 
 

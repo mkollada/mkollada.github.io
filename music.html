@@ -5,79 +5,108 @@ title: Music
 
 <h4>Music from The Collective Record</h4>
 
-<table class="music_table">
-    <tr>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/5_to_the_eye_with_stars.jpeg">
-                <div class="album_hover">
-                    <div class="hover_text">5 to the Eye with Stars - R.A.P. Ferriera</div>
-                </div>
-            </div>
-        </td>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/plains.jpeg">
-            </div>
-        </td>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/petey.jpeg">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1femCj7Bz44HB8XBgcuGe2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </td>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/florist.jpeg">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/danger_mouse.jpeg">
-            </div>
-        </td>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/remember_your_north_star.jpeg">
-            </div>
-        </td>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/fly_or_die.jpeg">
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/porridge_radio_wdltts.jpeg">
-            </div>
-        </td>
-        <td colspan="2">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7sD0gL9HgnN3RXLB1xHNRu?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/Dijon_Absolutely_AlbumCover.jpeg">
-            </div>
-        </td>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/forever_story.jpeg">
-            </div>
-        </td>
-        <td>
-            <div class="image_container">
-                <img class="album_icon" src="/assets/images/album_covers/pip_millet.jpeg">
-            </div>
-        </td>
-    </tr>
-</table>
+
+<table id="music-page-table"></table>
+
+<!-- <script src="/assets/js/display_music_table.js"></script> -->
+
+<script>
+
+    const reviews = [
+        {% for review in site.reviews %}
+            {
+                "unique_name": "{{ review.unique_name }}",
+                "album_name": "{{ review.album_name }}",
+                "artist_name": "{{ review.artist_name }}",
+                "album_link": "{{ review.album_link }}",
+                "artist_link": "{{ review.artist_link }}",
+                "track_link":"{{ review.track_link }}",
+                "track_name":"{{ review.track_name }}",
+                "album_image_path": "{{ review.album_image_path }}"
+            },
+        {% endfor %}
+    ]
+
+    function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+      
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+      
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+      }
+    
+    var random_reviews = shuffle(reviews)
+
+    var music_table = document.getElementById('music-page-table')
+
+    for (let i = 0; i < reviews.length/3; i++) {
+        music_table.innerHTML = music_table.innerHTML + '<tr>'
+        const row = document.createElement('tr')
+        for (let j = 0; j < 3; j++) {
+            _review = random_reviews[i*3+j]
+            
+            const imgcell = document.createElement('td')
+            const img_cont = document.createElement('div')
+            img_cont.className = 'image_container'
+            const img_link = document.createElement('a')
+            if ( _review['album_link'].length != 0) {
+                img_link.href = _review['album_link']
+            } else if ( _review['track_link'].length != 0) {
+                img_link.href = _review['track_link']
+            } else (
+                img_link.href = _review['artist_link']
+            )
+            const album_hover_div = document.createElement('div')
+            album_hover_div.className = 'album_hover'
+            const hover_text_div = document.createElement('div')
+            hover_text_div.className = 'hover_text'
+            hover_text_div.innerHTML = ''
+
+            album_hover_div.appendChild(hover_text_div)
+
+            if ( _review['album_name'].length != 0) {
+                hover_text_div.innerHTML += _review['album_name'] + ' - '
+            } else if ( _review['track_name'].length != 0) {
+                hover_text_div.innerHTML += _review['track_name'] + ' - '
+            } 
+
+            hover_text_div.innerHTML += _review[ 'artist_name' ]
+
+
+            
+            const img = document.createElement('img')
+            img.src = _review['album_image_path']
+            img.className = 'album_icon'
+            
+            img_link.appendChild(img)
+            img_cont.appendChild(img_link)
+            img_cont.appendChild(album_hover_div)
+            
+            imgcell.appendChild(img_cont)
+            row.appendChild(imgcell)
+        }
+        music_table.appendChild(row)
+
+    }
+
+</script>
+
+<div class="image_container">
+    <img class="album_icon" src="/assets/images/album_covers/5_to_the_eye_with_stars.jpeg">
+    <div class="album_hover">
+        <div class="hover_text">5 to the Eye with Stars - R.A.P. Ferriera</div>
+    </div>
+</div>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1femCj7Bz44HB8XBgcuGe2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        
