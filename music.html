@@ -27,6 +27,15 @@ title: Music
         {% endfor %}
     ]
 
+    const playlists = [
+        {% for playlist in site.data.playlist_links %}
+            {
+                "name":"{{ playlist.name }}",
+                "id":"{{ playlist.id }}"
+            },
+        {% endfor %}
+    ]
+
     function shuffle(array) {
         let currentIndex = array.length,  randomIndex;
       
@@ -49,56 +58,70 @@ title: Music
 
     var music_table = document.getElementById('music-page-table')
 
-    for (let i = 0; i < reviews.length/3; i++) {
+    for (let i = 0; i < reviews.length+playlists.length/3; i++) {
         music_table.innerHTML = music_table.innerHTML + '<tr>'
         const row = document.createElement('tr')
-        for (let j = 0; j < 3; j++) {
-            _review = random_reviews[i*3+j]
-            
-            const imgcell = document.createElement('td')
-            const img_cont = document.createElement('div')
-            img_cont.className = 'image_container'
-            const img_link = document.createElement('a')
-            if ( _review['album_link'].length != 0) {
-                img_link.href = _review['album_link']
-            } else if ( _review['track_link'].length != 0) {
-                img_link.href = _review['track_link']
-            } else (
-                img_link.href = _review['artist_link']
-            )
-            const album_hover_div = document.createElement('div')
-            album_hover_div.className = 'album_hover'
-            const hover_text_div = document.createElement('div')
-            hover_text_div.className = 'hover_text'
-            hover_text_div.innerHTML = ''
+        if (i % 2 == 0) {
+            for (let j = 0; j < 3; j++) {
+                _review = random_reviews[i*3/2+j]
+                
+                const imgcell = document.createElement('td')
+                const img_cont = document.createElement('div')
+                img_cont.className = 'image_container'
+                const img_link = document.createElement('a')
+                if ( _review['album_link'].length != 0) {
+                    img_link.href = _review['album_link']
+                } else if ( _review['track_link'].length != 0) {
+                    img_link.href = _review['track_link']
+                } else (
+                    img_link.href = _review['artist_link']
+                )
+                const album_hover_div = document.createElement('div')
+                album_hover_div.className = 'album_hover'
+                const hover_text_div = document.createElement('div')
+                hover_text_div.className = 'hover_text'
+                hover_text_div.innerHTML = ''
 
-            album_hover_div.appendChild(hover_text_div)
+                album_hover_div.appendChild(hover_text_div)
 
-            if ( _review['album_name'].length != 0) {
-                hover_text_div.innerHTML += _review['album_name'] + ' - '
-            } else if ( _review['track_name'].length != 0) {
-                hover_text_div.innerHTML += _review['track_name'] + ' - '
-            } 
+                if ( _review['album_name'].length != 0) {
+                    hover_text_div.innerHTML += _review['album_name'] + ' - '
+                } else if ( _review['track_name'].length != 0) {
+                    hover_text_div.innerHTML += _review['track_name'] + ' - '
+                } 
 
-            hover_text_div.innerHTML += _review[ 'artist_name' ]
+                hover_text_div.innerHTML += _review[ 'artist_name' ]
 
 
-            
-            const img = document.createElement('img')
-            img.src = _review['album_image_path']
-            img.className = 'album_icon'
-            
-            img_link.appendChild(img)
-            img_cont.appendChild(img_link)
-            img_cont.appendChild(album_hover_div)
-            
-            imgcell.appendChild(img_cont)
-            row.appendChild(imgcell)
+                
+                const img = document.createElement('img')
+                img.src = _review['album_image_path']
+                img.className = 'album_icon'
+                
+                img_link.appendChild(img)
+                img_cont.appendChild(img_link)
+                img_cont.appendChild(album_hover_div)
+                
+                imgcell.appendChild(img_cont)
+                row.appendChild(imgcell)
+            }
+        } else {
+            if (i / 2 < playlists.length) {
+                var playlist_cell = document.createElement( 'td' )
+                var playlist_div = document.createElement( 'div' )
+
+                var id = playlists[ parseInt(i/2) ].id
+
+                playlist_cell.setAttribute("colspan",3)
+                playlist_div.innerHTML = '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/' + id + '?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+                
+                playlist_cell.appendChild(playlist_div)
+                row.appendChild(playlist_cell)
+            }
         }
         music_table.appendChild(row)
     }
 
 </script>
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1femCj7Bz44HB8XBgcuGe2?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
