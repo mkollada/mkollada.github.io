@@ -1,3 +1,20 @@
+#home_intro {
+    font-size: medium;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#home_playlist_div {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#my-form-status {
+    font-size: small;
+}
+
 .email_input{
     display: flex;
     flex-flow: row;
@@ -10,6 +27,10 @@
     column-gap: 10;
     gap: 10;
     // align-items: center;
+}
+
+#random-review-button {
+    width: 50%;
 }
 
 .email_div {

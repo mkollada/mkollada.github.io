@@ -12,19 +12,19 @@ fetch(event.target.action, {
     }
 }).then(response => {
     if (response.ok) {
-    status.innerHTML = "Thanks for your submission!";
+    status.innerHTML = "Sweet, you're subscribed!";
     form.reset()
     } else {
     response.json().then(data => {
         if (Object.hasOwn(data, 'errors')) {
         status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
         } else {
-        status.innerHTML = "Oops! There was a problem submitting your form"
+        status.innerHTML = "There was an issue, reload the page try again."
         }
     })
     }
 }).catch(error => {
-    status.innerHTML = "Oops! There was a problem submitting your form"
+    status.innerHTML = "There was an issue, reload the page try again."
 });
 }
 form.addEventListener("submit", handleSubmit)

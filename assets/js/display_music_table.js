@@ -1,68 +1,87 @@
-// ---
-// ---
-// var albums = [
-//     {% for review in site.reviews %}
-//         ("album-{{ review.unique_name }}",
-//         "{{ review.album_image_path }}"),
-//     {% endfor %}
-// ];
+---
+---
+const reviews = [
+    {% for review in site.reviews %}
+        {
+            "unique_name": "{{ review.unique_name }}",
+            "album_name": "{{ review.album_name }}",
+            "artist_name": "{{ review.artist_name }}",
+            "album_link": "{{ review.album_link }}",
+            "artist_link": "{{ review.artist_link }}",
+            "track_link":"{{ review.track_link }}",
+            "track_name":"{{ review.track_name }}",
+            "album_image_path": "{{ review.album_image_path }}"
+        },
+    {% endfor %}
+]
 
-fetch('/reviews.json')
-    .then(response => response.json())
-    .then( data => {
-        console.log(data)
-    })
-// var playlists = [
-//     {% for playlist in site.data.playlist_links %}
-//         "playlist-{{ playlist.name }}"
-//     {% endfor %}
-// ]
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
 
-// console.log(albums[1])
-
-// function shuffle(array) {
-//     let currentIndex = array.length,  randomIndex;
-  
-//     // While there remain elements to shuffle.
-//     while (currentIndex != 0) {
-  
-//       // Pick a remaining element.
-//       randomIndex = Math.floor(Math.random() * currentIndex);
-//       currentIndex--;
-  
-//       // And swap it with the current element.
-//       [array[currentIndex], array[randomIndex]] = [
-//         array[randomIndex], array[currentIndex]];
-//     }
-  
-//     return array;
-//   }
-
-// var random_albums = shuffle(albums)
+var random_reviews = shuffle(reviews)
 
 var music_table = document.getElementById('music-page-table')
 
-// var table_cell_num = albums.length + playlists.length*2
-
-music_table.innerHTML = music_table.innerHTML + '<table>'
-
-for (let i = 0; i < albums.length/3; i++) {
+for (let i = 0; i < reviews.length/3; i++) {
     music_table.innerHTML = music_table.innerHTML + '<tr>'
+    const row = document.createElement('tr')
     for (let j = 0; j < 3; j++) {
-        music_table.innerHTML = music_table.innerHTML + '<td>'
-        music_table.innerHTML = music_table.innerHTML + "<img src='" + random_albums[i*3+j] + "'></img>"
-        music_table.innerHTML = music_table.innerHTML + '</td>'
+        _review = random_reviews[i*3+j]
+        
+        const imgcell = document.createElement('td')
+        const img_cont = document.createElement('div')
+        img_cont.className = 'image_container'
+        const img_link = document.createElement('a')
+        if ( _review['album_link'].length != 0) {
+            img_link.href = _review['album_link']
+        } else if ( _review['track_link'].length != 0) {
+            img_link.href = _review['track_link']
+        } else (
+            img_link.href = _review['artist_link']
+        )
+        const album_hover_div = document.createElement('div')
+        album_hover_div.className = 'album_hover'
+        const hover_text_div = document.createElement('div')
+        hover_text_div.className = 'hover_text'
+        hover_text_div.innerHTML = ''
+
+        album_hover_div.appendChild(hover_text_div)
+
+        if ( _review['album_name'].length != 0) {
+            hover_text_div.innerHTML += _review['album_name'] + ' - '
+        } else if ( _review['track_name'].length != 0) {
+            hover_text_div.innerHTML += _review['track_name'] + ' - '
+        } 
+
+        hover_text_div.innerHTML += _review[ 'artist_name' ]
+
+
+        
+        const img = document.createElement('img')
+        img.src = _review['album_image_path']
+        img.className = 'album_icon'
+        
+        img_link.appendChild(img)
+        img_cont.appendChild(img_link)
+        img_cont.appendChild(album_hover_div)
+        
+        imgcell.appendChild(img_cont)
+        row.appendChild(imgcell)
     }
-    music_table.innerHTML = music_table.innerHTML + '</tr>'
+    music_table.appendChild(row)
 }
-
-music_table.innerHTML = music_table.innerHTML + '</table>'
-
-
-
-
-// for (let i = 0; i < albums.length + playlists.length*2; i++) {
-//     if(i%3 == 0){
-
-//     }
-// }

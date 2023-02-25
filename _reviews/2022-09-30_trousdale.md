@@ -1,5 +1,6 @@
 ---
 unique_name: NA-Trousdale
+author: Nicole Andrzejewski
 album_name: When Everything is Better, I'll Let You Know
 artist_name: Trousdale
 artist_link: https://open.spotify.com/artist/26DvqLYszG0oIOeelTF5kE
@@ -11,6 +12,4 @@ I was lucky enough to spend my weekend at the Sound on Sound music festival, and
 <br>
 <br>
 Listen to: “<a href="https://open.spotify.com/track/0YsdHMSBeW6TpNMBrZobBd?si=4d22740bdbac4448">Always, Joni</a>” (for Joni Mitchell, who is also a #queen), <a href="https://www.youtube.com/watch?v=JmivrNfM5PY">their NPR live session</a>.
-</br>
-<br>
-- Nicole Andrzejewski
+
