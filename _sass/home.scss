@@ -4,6 +4,12 @@
     margin-right: 5%;
 }
 
+@media only screen and (max-width: 480px){
+    #home_intro {
+        font-size: small;
+    }
+}
+
 #home_playlist_div {
     margin-left: 10%;
     margin-right: 10%;
