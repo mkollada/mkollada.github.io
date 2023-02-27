@@ -1,5 +1,6 @@
 #container {
     max-width: 850px;
+    min-width: 480px;
     // margin: 25px auto 0px auto;
     margin: 25px auto;
     align-self: center;
@@ -27,12 +28,9 @@
 #content-container {
     // padding: 2rem 2rem 2rem 2rem;
     background-color: white;
+    align-items: center;
 }
 
-// @media only screen and (max-width: 480px){
-//     #container {
-//         width: 95%;
-//         margin: auto;
-//         align-items: center;
-//     }
-// }
+#newsletter-content-div {
+    max-width: 700;
+}
