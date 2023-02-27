@@ -34,7 +34,7 @@
 .banner_icon {
     width: auto;
     height: auto;
-    min-width: 50px;
+    min-width: 40px;
     align-items: center;
     margin: 0 auto;
 }
@@ -42,5 +42,9 @@
 @media only screen and (max-width: 480px){
     #banner_text {
         font-size: 18px;
+    }
+
+    .banner_icon {
+        min-width: 30px;
     }
 }

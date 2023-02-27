@@ -1,0 +1,70 @@
+.reviewBlockDiv  {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewBlockHeader  {
+    display: flex;
+    flex-direction: row;
+}
+
+.reviewBlockImage  {
+    display: flex;
+}
+
+.reviewBlockHeaderText  {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewBlockTitle  {
+    display: flex;
+}
+
+.reviewBlockSubTitle  {
+    display: flex;
+}
+
+.reviewBlockGenre  {
+    display: flex;
+    font-size: medium;
+}
+
+.reviewBlockContent  {
+    display: flex;
+}
+
+.reviewBlockContentCell {
+    font-family: Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: small;
+    line-height: 1.3;
+}
+
+@media only screen and (max-width: 480px){
+    .reviewBlockContentCell{
+        font-size: smaller;
+    }
+
+}
+
+
+// .mcnCodeBlock {
+//     border-collapse: collapse;
+//     mso-table-lspace: 0pt;
+//     mso-table-rspace: 0pt;
+//     -ms-text-size-adjust: 100%;
+//     -webkit-text-size-adjust: 100%;
+// }
+
+// .mcnTextBlockInner {
+//     mso-line-height-rule: exactly;
+//     -ms-text-size-adjust: 100%;
+//     -webkit-text-size-adjust: 100%;
+// }
+
+// .reviewImageCell{
+//     mso-line-height-rule: exactly;
+//     -ms-text-size-adjust: 100%;
+//     -webkit-text-size-adjust: 100%;
+// }
