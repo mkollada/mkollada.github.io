@@ -69,20 +69,28 @@ title: Music
                 const img_cont = document.createElement('div')
                 img_cont.className = 'image_container'
                 const img_link = document.createElement('a')
+                const hover_link = document.createElement('a')
                 if ( _review['album_link'].length != 0) {
                     img_link.href = _review['album_link']
+                    hover_link.href = _review['album_link']
                 } else if ( _review['track_link'].length != 0) {
                     img_link.href = _review['track_link']
-                } else (
+                    hover_link.href = _review['album_link']
+                } else {
                     img_link.href = _review['artist_link']
-                )
+                    hover_link.href = _review['album_link']
+                }
                 const album_hover_div = document.createElement('div')
                 album_hover_div.className = 'album_hover'
                 const hover_text_div = document.createElement('div')
                 hover_text_div.className = 'hover_text'
                 hover_text_div.innerHTML = ''
 
-                album_hover_div.appendChild(hover_text_div)
+                
+                hover_link.appendChild(hover_text_div)
+                hover_link.style.textDecoration = 'none'
+                album_hover_div.appendChild(hover_link)
+                
 
                 if ( _review['album_name'].length != 0) {
                     hover_text_div.innerHTML += _review['album_name'] + ' - '
