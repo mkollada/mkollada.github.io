@@ -7,7 +7,7 @@ title: Newsletters
 <ul>
   {% for newsletter in site.newsletters reversed %}
     <li>
-      <h5><a href="{{ newsletter.url }}">{{ newsletter.title }}</a></h5>
+      <h5><a href="{{ newsletter.url }}">{{ newsletter.title }} - {{ newsletter.date | date: "%m/%d/%y" }}</a></h5>
     </li>
   {% endfor %}
 </ul>
