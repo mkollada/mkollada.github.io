@@ -4,7 +4,7 @@ unique_name: tcr_1_extra
 ---
 <br>
 
-<span style="font-size:12px"><span style="font-family:helvetica neue,helvetica,arial,verdana,sans-serif"><u>A few other cool things:</u></span></span>
+<u>A few other cool things:</u>
 
 <ul>
 	<li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><span style="font-size:12px"><span style="font-family:helvetica neue,helvetica,arial,verdana,sans-serif">My friend, <a href="https://open.spotify.com/artist/3beovFcnzA9hTr18ZxymFK?si=eR_-_2Y7RhCFkNcLcOCvWw" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">Oscar Louis</a>, just put out a new EP called <a href="https://open.spotify.com/album/6Q9fxvLHOEVQHyOzUTZJUL?si=befYzm_0Q2Kj6aZaRSokvw" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #007C89;font-weight: normal;text-decoration: underline;">Ghost in the Apartment</a>. It's dope, y'all should give it a listen.</span></span></li>

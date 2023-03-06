@@ -30,11 +30,9 @@ title: Home
 
         {% include divider_line.html %}
 
-        <div >
-            <h2 class="null" style="text-align: center;display: block;margin-bottom: 0; margin-top: 6;padding: 0;color: #202020;font-family: Helvetica;font-size: 16px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;"><span style="font-size:18px">
-                Subscribe to the email newsletter here:
-            </span></h2>  
-        </div>
+        {% include section_header.html header_text="Subscribe to the email newsletter here:" %}
+
+
         <form id="my-form" class="email_input" action="https://formspree.io/f/meqwgknr" method="POST">
             <div class="email_div">
                 <input name="email_address" type="text" placeholder="Input your email here...">
@@ -98,6 +96,3 @@ function randomReview() {
         <input type="submit" value="Randomize" onclick=randomReview("{{ curr_review }}");>
     </div>
 </center>
-
-
-{% include divider_line.html %}
