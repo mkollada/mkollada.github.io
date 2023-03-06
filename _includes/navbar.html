@@ -1,7 +1,7 @@
 <div id="navbar">
     <nav>
       <div>
-        <hr class="banner_line">
+        {% include divider_line.html %}
         <table class="navbar-links">
           {% for item in site.data.navigation %}
               <td style="padding: 20;">
@@ -9,7 +9,7 @@
               </td>
           {% endfor %}
         </table>
-        <hr class="banner_line">
+        {% include divider_line.html %}
       </div>
     </nav>
 </div>
