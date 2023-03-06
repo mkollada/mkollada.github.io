@@ -2,7 +2,7 @@
 unique_name: MK-jaimie_branch
 artist_name: jaimie branch
 artist_link: https://open.spotify.com/artist/6lcwlkAjBPSKnFBZjjZFJs
-album_image_path: https://mcusercontent.com/f89c714d668e98a972a148b5b/images/91f9a5e6-5d44-9760-d208-7f2f30e85317.jpeg
+album_image_path: /assets/images/album_covers/fly_or_die.jpeg
 genre: Jazz
 alt_image_text: jaimie branch
 markdown: kramdown

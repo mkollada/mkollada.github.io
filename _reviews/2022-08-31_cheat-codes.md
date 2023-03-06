@@ -8,7 +8,7 @@ artist_names:
 artist_links: 
     - "https://open.spotify.com/artist/2dBj3prW7gP9bCCOIQeDUf"
     - "https://open.spotify.com/artist/6DJEUXZm0e2rAohdoZ5Voo"
-album_image_path: https://mcusercontent.com/f89c714d668e98a972a148b5b/images/08b14026-0d96-6e10-3490-2a56b6162ab3.jpeg
+album_image_path: /assets/images/album_covers/danger_mouse.jpeg
 genre: Rap
 alt_image_text: Cheat Codes - Danger Mouse, Black Thought
 markdown: kramdown

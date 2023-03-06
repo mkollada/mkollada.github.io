@@ -4,7 +4,7 @@ album_name: 5 to the Eye with Stars
 artist_name: R.A.P. Ferreira
 album_link: https://open.spotify.com/album/26S8gQ01Ztkq7PFFUAppHu
 artist_link: https://open.spotify.com/artist/0knGpCTbmG4ctl1wzYRZs4
-album_image_path: https://mcusercontent.com/f89c714d668e98a972a148b5b/images/3f579d8d-e63a-d87b-59f5-c0e3ec5f8b71.jpeg
+album_image_path: /assets/images/album_covers/5_to_the_eye_with_stars.jpeg
 alt_image_text: 5 to the Eye with Stars - R.A.P. Ferreira
 genre: RAP
 markdown: kramdown

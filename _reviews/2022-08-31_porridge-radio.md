@@ -4,7 +4,7 @@ album_name: Water Slide, Diving Board, Ladder To The Sky
 artist_name: Porridge Radio
 album_link: https://open.spotify.com/album/6wdThJ2V58nkaWfv1jA4B5
 artist_link: https://open.spotify.com/artist/4vAQ4M7vgItwBtmBTgRu48
-album_image_path: https://mcusercontent.com/f89c714d668e98a972a148b5b/images/f80b4e15-0eba-c96e-9b37-626881526af5.jpeg
+album_image_path: /assets/images/album_covers/porridge_radio_wdltts.jpeg
 alt_image_text: Water Slide, Diving Board, Ladder To The Sky - Porridge Radio
 markdown: kramdown
 ---

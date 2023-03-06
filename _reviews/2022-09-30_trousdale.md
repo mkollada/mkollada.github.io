@@ -4,7 +4,7 @@ author: Nicole Andrzejewski
 album_name: When Everything is Better, I'll Let You Know
 artist_name: Trousdale
 artist_link: https://open.spotify.com/artist/26DvqLYszG0oIOeelTF5kE
-album_image_path: https://mcusercontent.com/f89c714d668e98a972a148b5b/images/81366d9b-0b99-ea3a-d477-bd599a32e0bb.jpeg
+album_image_path: /assets/images/album_covers/trousdale.jpeg
 alt_image_text: Trousdale
 markdown: kramdown
 ---

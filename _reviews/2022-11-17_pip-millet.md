@@ -4,7 +4,7 @@ album_name: When Everything is Better, I'll Let You Know
 artist_name: Pip Millet
 album_link: https://open.spotify.com/album/3gW4LjXtOZkjxmdHxBABpx
 artist_link: https://open.spotify.com/artist/1QfEfvB62EEl4upf2ANKkR
-album_image_path: https://mcusercontent.com/f89c714d668e98a972a148b5b/images/36700cba-a2d2-2295-fab1-82667058b31c.jpg
+album_image_path: /assets/images/album_covers/pip_millet.jpeg
 alt_image_text: When Everything is Better, I'll Let You Know - Pip Millet
 markdown: kramdown
 ---
