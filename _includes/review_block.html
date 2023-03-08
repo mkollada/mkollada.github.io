@@ -1,4 +1,4 @@
-<table class="mcnCodeBlock">
+<table class="reviewBlock">
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner">
@@ -28,16 +28,16 @@
 										<tr>
 											<td class="reviewImageCellInner">
 												{% if review.album_name %}
-													<a href="{{ review.album_link }}" style="text-decoration: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><h4 style="font-family: Helvetica;display: block;margin: 0;padding: 0;color: #202020;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">{{ review.album_name }}</h4></a>
+													<a href="{{ review.album_link }}" style="text-decoration: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><h4 style="display: block;margin: 0;padding: 0;color: #202020;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">{{ review.album_name }}</h4></a>
 												{% elsif review.track_name %}
-													<a href="{{ review.track_link }}" style="text-decoration: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><h4 style="font-family: Helvetica;display: block;margin: 0;padding: 0;color: #202020;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">{{ review.track_name }}</h4></a>
+													<a href="{{ review.track_link }}" style="text-decoration: none;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><h4 style="display: block;margin: 0;padding: 0;color: #202020;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">{{ review.track_name }}</h4></a>
 												{% endif %}
 												<!-- <a href="{{ review.artist_link }}" style="text-decoration: none;color: black;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"> -->
 													{% if review.album_name or review.track_name %}
 														{% if review.artist_names %}
 															{% for artist_name in {{ review.artists_names }} %}
 															poop
-															<div style="font-family: Helvetica; margin-top: 10px;">
+															<div style="margin-top: 10px;">
 																<!-- {{ review.artist_names }} -->
 																
 																	
@@ -50,16 +50,16 @@
 															{% endfor %}
 															
 														{% elsif review.artist_name %}
-															<div style="font-family: Helvetica; margin-top: 10px;">
+															<div style="margin-top: 10px;">
 																{{ review.artist_name }}
 															</div>
 														{% endif %}
 													{% else %}
-														<h4 style="font-family: Helvetica;display: block;margin: 0;padding: 0;color: #202020;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">{{ review.artist_name }}</h4>
+														<h4 style="display: block;margin: 0;padding: 0;color: #202020;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">{{ review.artist_name }}</h4>
 													{% endif %}
 												</a>
 												{% if review.genre %}
-													<div style="font-family: Helvetica; margin-top: 10px;">Genre: {{ review.genre }}</div>
+													<div style="margin-top: 10px;">Genre: {{ review.genre }}</div>
 												{% endif %}
 											</td>
 										</tr>
