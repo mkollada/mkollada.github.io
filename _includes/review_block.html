@@ -36,7 +36,6 @@
 													{% if review.album_name or review.track_name %}
 														{% if review.artist_names %}
 															{% for artist_name in {{ review.artists_names }} %}
-															poop
 															<div style="margin-top: 10px;">
 																<!-- {{ review.artist_names }} -->
 																
@@ -44,14 +43,14 @@
 																	<!-- {% if forloop.index > 0 %}
 																	", " 
 																	{% endif %} -->
-																	<a href="{{ review.artist_links[forloop.index] }}">review.artist_name</a>
+																	<a href="{{ review.artist_link }}" style="text-decoration: none;color: black;">{{ review.artist_name }}</a>
 																
 															</div>
 															{% endfor %}
 															
 														{% elsif review.artist_name %}
 															<div style="margin-top: 10px;">
-																{{ review.artist_name }}
+																<a href="{{ review.artist_link }}" style="text-decoration: none;color: black;">{{ review.artist_name }}</a>
 															</div>
 														{% endif %}
 													{% else %}
@@ -72,15 +71,18 @@
 						</tbody>
 				</table>
 
-<table cellpadding="10">
-   	<tbody><tr>
-    				<td class="reviewBlockContentCell">
-                   
-
-                    {{ review.content }}
-
-            		</td>  
-    </tr>
+<table>
+   	<tbody>
+		<tr>
+    		<td class="reviewBlockContentCell">
+            	{{ review.content }}
+			</td>  
+    	</tr>
+		<tr>
+			<td class="reviewBlockContentCell">
+				- {{ review.author }}
+			</td>
+		</tr>
 
             
         
