@@ -1,0 +1,68 @@
+---
+title: "TCR #6"
+---
+
+<!-- Text Block 1 -->
+{% for text in site.texts %}
+	{% if text.unique_name == "tcr_6_intro" %}
+		{% include text_block.html text=text %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 1 -->
+{% include section_header.html header_text="For album recs for ya:" %}
+
+{% include divider_line.html %}
+
+
+<!-- Review Block 1 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "RT-Michael-Killer_Mike" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 2 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-Girl_with_fish-Feeble_Little_Horse" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 3 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "ZM-Wait_Til_I_Get_over-Durand_Jones" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Review Block 4 -->
+{% for review in site.reviews %}
+	{% if review.unique_name == "MK-Maps-billy_woods" %}
+		{% include review_block.html review=review %}
+	{% endif %}
+{% endfor %}
+
+{% include divider_line.html %}
+
+<!-- Section Header 3 -->
+{% assign header_3_text = "A couple other cool things:" %}
+{% include section_header.html header_text=header_3_text %}
+
+{% include divider_line.html %}
+
+<!-- Text Block 2 -->
+
+{% for text in site.texts %}
+	{% if text.unique_name == "tcr_6_extra" %}
+		{% include text_block.html text=text %}
+	{% endif %}
+{% endfor %} 
